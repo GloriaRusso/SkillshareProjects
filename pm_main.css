@@ -1,0 +1,173 @@
+/* --------------------------------------------------------------------------
+Base styles
+----------------------------------------------------------------------------- */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Verdana', sans-serif;
+  color: green;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+  letter-spacing: .05em;
+  margin: 60px 0;
+}
+
+h2 {
+  Color: Purple;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: bold;
+   
+}
+
+/* --------------------------------------
+Gallery Styles
+---------------------------------------- */
+/*Styles to set up the grid (multi-column) layout for the gallery using Flexbox*/
+main {
+	display: webkit-box;
+	display: -ms-flexbox;
+  display: flex;
+    -webkit-flex-pack: justify;
+    -ms-flex-pack: justify;
+  justify-content: space-between;
+    -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 15px;
+}
+
+figure {
+  width: 49%;
+  margin: 0 0 20px;
+  padding: 40px 0;
+  position: relative;
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.05);
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  width: 40%;
+    -webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+  /*Step 3B: Add a transition so the changes to the image on hover will be animated!
+    DONE*/
+
+}
+
+figure:hover img {
+	  -webkit-transform: translateY(25px) scale(.5, .5);
+	  transform: translateY(25px) scale(.5, .5);
+  /*Step 3A: Add a transform here to scale and move the image on hover
+  DONE */
+  /*BONUS: Add your own unique effect!
+  
+  */
+
+}
+
+figcaption {
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+    display: -webkit-box;
+	display: -ms-webkit-box;
+  display: flex;
+    -webkit-box-align: center;
+	align-items: center;
+  align-items: center;
+  padding: 0 20px;
+  opacity: 0;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+/*  opacity: 0;  */
+  /* Step 1A: Make the figcaptions (the white overlay descriptions)
+  transparent by default.
+  DONE
+  
+  /* Step 1C: (Make sure to complete step 1B first so you can see the difference!):
+  Use the transition property so that the opacity is animated.
+  DONE  */
+  
+}
+
+figure:hover figcaption {
+	opacity: 100;
+  /* Step 1B: Make the figcaption opaque when the user
+  hovers over the figure. Hint: use opacity! 
+  DONE ??? */
+}
+
+button {
+  margin-left: auto;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 18px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  /* STEP 2B: Add a transition to the button so that the new background color animates in! 
+    DONE*/
+
+}
+
+button:hover {
+	  background-color: purple;
+	    border-bottom: 5px solid blue;
+	    border-right: 5px solid blue;
+  /* STEP 2A: Change the background color for the button to #F78889 on hover 
+      DONE, made it pink instead.*/
+
+  /*STEP 4A: Add a transform to the button to move it down slightly on hover
+     Hint (ONLY IF YOU NEED IT!) Use the translateY option for transform to move it down.
+     make sure to specify a value in px !
+	  DONE  */
+		-webkit-transform: translateY(6px);
+		transform: translateY(6px);
+
+}
+
+/* --------------------------------------
+Theme Colors
+---------------------------------------- */
+figure:first-of-type {
+  background-color: green;
+}
+
+figure:nth-of-type(2) {
+  background-color: gray;
+}
+
+figure:nth-of-type(3) {
+  background-color: gray;
+}
+
+figure:nth-of-type(4) {
+  background-color: green;
+}
+
+/* --------------------------------------
+Responsive Styles
+---------------------------------------- */
+@media only screen and (max-width: 500px) {
+  figure {
+    width: 100%;
+  }
+}
